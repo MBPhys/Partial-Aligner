@@ -14,10 +14,16 @@ A plugin to affine transform images and parts of images in 2D and 3D. It was dev
 You can install `Partial-Aligner` via [pip]:
 
     pip install Partial-Aligner
+    
+To make full use of this plugin, please also install the sister plugins:
+
+    pip install Label-Creator
+    pip install Layer-Data-Replace
+    pip install World2Data
 
 ## Usage
 
-It is important to note that this plugin is part of a group of plugins ([Label-Creator](https://github.com/DKFZ-TMTRR/Label-Creator, "Creates Labels"),[Layer-Data-Replace](https://github.com/DKFZ-TMTRR/Layer-Data-Replace, "Replaces the data of a layer with other data"), [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image")) which are intended to be used together. 
+It is important to note that this plugin is part of a group of plugins ([Label-Creator](https://github.com/DKFZ-TMTRR/Label-Creator, "Creates Labels"), [Layer-Data-Replace](https://github.com/DKFZ-TMTRR/Layer-Data-Replace, "Replaces the data of a layer with other data"), [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image")) which are intended to be used together. 
 
 The principle workflow with this plugin is as follows:
 
@@ -43,6 +49,15 @@ Decisions on the parameters (step 2) are made based on the problem at hand:
 </p>
 
 To make this plugin run reasonably fast, the affine transformations are not applied to the image data in real time. Instead, the internal napari viewing parameters are changed according to the transformation parameters. Therefore, to save transformed image data, the [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image") plugin is used, which calculates and saves the resulting image based on the internal napari viewing parameters.
+
+
+Here we showcase a resulting multimodal 3D alignment of a whole mouse brain. The modalities are CT, MRI, simulated radiation dose distributions, DAPI staining and DNA-damage repair foci, with a Nissl-staining mouse atlas as template.
+
+https://user-images.githubusercontent.com/36212786/149530462-51a53631-bf74-459b-ab4e-572c52cf2692.mov
+
+
+
+
 
 
 
