@@ -5,7 +5,7 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/Partial-Aligner.svg?color=green)](https://python.org)
 
 
-A plugin to affine transform images and parts of images in 2D and 3D. It was developed in the context of brain slice registration and solves multiple, related problems when working with histology slices.
+A napari plugin to affine transform images and parts of images in 2D and 3D. It was developed in the context of brain slice registration and solves multiple, related problems when working with histology slices.
 
 ----------------------------------
 
