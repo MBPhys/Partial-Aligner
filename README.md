@@ -17,21 +17,32 @@ You can install `Partial-Aligner` via [pip]:
 
 ## Usage
 
-It is important to note that this plugin is part of a group of plugins which are intended to be used together
+It is important to note that this plugin is part of a group of plugins ([Label-Creator](https://github.com/DKFZ-TMTRR/Label-Creator, "Creates Labels"),[Layer-Data-Replace](https://github.com/DKFZ-TMTRR/Layer-Data-Replace, "Replaces the data of a layer with other data"), [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image")) which are intended to be used together. 
 
 The principle workflow with this plugin is as follows:
 
 1. Load an image of interest (ioi) using standard napari.
 2. Find out meaningful transformation parameters for the ioi (or part of it) based on what you see in the viewer.
-3. Save the affine transformation matrix
-4. Apply the saved transformation to create a new, altered version of the ioi (use plugin 'World2Data')
+3. (optional) Save the affine transformation matrix (can later be applied to other modalities)
+4. Apply the transformation to create a new, altered version of the ioi (use plugin [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image"))
 
 Decisions on the parameters (step 2) are made based on the problem at hand:
 
-- Registration: You have a second (fixed) image and you want to align your ioi to that image? Transform your whole ioi! Just play with the transformation parameters until you are happy with the alignment of ioi and fixed image. Continue with steps 3 and 4.
-- Histology artifact repair: Parts of your histology slice are misplaced? Transform the misplaced parts! Label them and change the transformation parameters for the misplaced parts until you are happy with their alignment with the rest of the image. Continue with steps 3 and 4.
+- Registration: You have a second (fixed) image and you want to align your ioi to that image? Transform your whole ioi! Just play with the transformation parameters until you are happy with the alignment of ioi and fixed image.
 
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/36212786/149524198-9a25b6dc-4169-4546-85b3-7c2f57fccc97.png" width="50%" height="50%">  <br /> 
+     <i>DAPI staining (red) before (left) and after (right) manual registration on an MRI image (green).</i> 
+</p>
 
+- Histology artifact repair: Parts of your histology slice are misplaced? Transform the misplaced parts! Label them and change the transformation parameters for the misplaced parts until you are happy with their alignment with the rest of the image.
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/36212786/149526385-09aeebe2-d03e-4dd4-a424-d0f3af207529.png" width="50%" height="50%">  <br /> 
+     <i> Original slice with misplaced region (left), marked using the label function (middle) and after manual adjustment (right), where the misplaced region (green) was cut and newly positioned.</i> 
+</p>
+
+To make this plugin run reasonably fast, the affine transformations are not applied to the image data in real time. Instead, the internal napari viewing parameters are changed according to the transformation parameters. Therefore, to save transformed image data, the [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image") plugin is used, which calculates and saves the resulting image based on the internal napari viewing parameters.
 
 
 
