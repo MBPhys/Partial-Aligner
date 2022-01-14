@@ -22,20 +22,20 @@ with open('requirements.txt') as f:
 
 
 # https://github.com/pypa/setuptools_scm
-#use_scm = {"write_to": "Partial_Aligner/_version.py"}
+use_scm = {"write_to": "Partial_Aligner/_version.py"}
 
 setup(
     name='Partial-Aligner',
     author='Marc Boucsein, Robin Koch',
     license='BSD-3',
-    #url='https://github.com/MBPhys/Partial-Aligner',
-    description='A Plugin for a manual registration of a part of an image',
+    url='https://github.com/DKFZ-TMTRR/Partial-Aligner',
+    description='A napari plugin for manual registration of (a part of) an image',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     packages=find_packages(),
     python_requires='>=3.9',
     install_requires=requirements,
-    #use_scm_version=use_scm,
+    use_scm_version=use_scm,
     setup_requires=['setuptools_scm'],
     classifiers=[
         'Development Status :: 4 - Beta',
