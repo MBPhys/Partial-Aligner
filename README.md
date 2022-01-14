@@ -23,7 +23,7 @@ To make full use of this plugin, please also install the sister plugins:
 
 ## Usage
 
-It is important to note that this plugin is part of a group of plugins ([Label-Creator](https://github.com/DKFZ-TMTRR/Label-Creator, "Creates Labels"), [Layer-Data-Replace](https://github.com/DKFZ-TMTRR/Layer-Data-Replace, "Replaces the data of a layer with other data"), [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image")) which are intended to be used together. 
+It is important to note that this plugin is part of a group of plugins ([Label-Creator](https://github.com/DKFZ-TMTRR/Label-Creator "Creates Labels"), [Layer-Data-Replace](https://github.com/DKFZ-TMTRR/Layer-Data-Replace "Replaces the data of a layer with other data"), [World2Data](https://github.com/DKFZ-TMTRR/World2Data "Applies a transformation to an image")) which are intended to be used together. 
 
 The principle workflow with this plugin is as follows:
 
