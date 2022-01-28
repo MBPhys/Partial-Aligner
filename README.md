@@ -30,7 +30,7 @@ The principle workflow with this plugin is as follows:
 1. Load an image of interest (ioi) using standard napari.
 2. Find out meaningful transformation parameters for the ioi (or part of it) based on what you see in the viewer.
 3. (optional) Save the affine transformation matrix (can later be applied to other modalities)
-4. Apply the transformation to create a new, altered version of the ioi (use plugin [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image"))
+4. Apply the transformation to create a new, altered version of the ioi (use plugin [World2Data](https://github.com/DKFZ-TMTRR/World2Data "Applies a transformation to an image"))
 
 Decisions on the parameters (step 2) are made based on the problem at hand:
 
@@ -48,7 +48,7 @@ Decisions on the parameters (step 2) are made based on the problem at hand:
      <i> Original slice with misplaced region (left), marked using the label function (middle) and after manual adjustment (right), where the misplaced region (green) was cut and newly positioned.</i> 
 </p>
 
-To make this plugin run reasonably fast, the affine transformations are not applied to the image data in real time. Instead, the internal napari viewing parameters are changed according to the transformation parameters. Therefore, to save transformed image data, the [World2Data](https://github.com/DKFZ-TMTRR/World2Data, "Applies a transformation to an image") plugin is used, which calculates and saves the resulting image based on the internal napari viewing parameters.
+To make this plugin run reasonably fast, the affine transformations are not applied to the image data in real time. Instead, the internal napari viewing parameters are changed according to the transformation parameters. Therefore, to save transformed image data, the [World2Data](https://github.com/DKFZ-TMTRR/World2Data "Applies a transformation to an image") plugin is used, which calculates and saves the resulting image based on the internal napari viewing parameters.
 
 
 Here we showcase a resulting multimodal 3D alignment of a whole mouse brain. The modalities are CT, MRI, simulated radiation dose distributions, DAPI staining and DNA-damage repair foci, with a Nissl-staining mouse atlas as template.
